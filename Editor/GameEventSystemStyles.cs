@@ -1,29 +1,31 @@
 ﻿using UnityEngine;
-using UnityEditor;
 
-public static class GameEventStyles
+namespace Bewildered.Editors.Events
 {
-    public static GUIStyle ActiveToolbarButton { get; private set; }
-    public static GUIStyle ListBackgroundOdd { get; private set; }
-    public static GUIStyle ListBackgroundEven { get; private set; }
-    public static GUIStyle Box { get; private set; }
-
-    static GameEventStyles()
+    internal static class GameEventStyles
     {
-        ActiveToolbarButton = new GUIStyle("toolbarbutton");
-        ActiveToolbarButton.normal = ActiveToolbarButton.onNormal;
+        public static GUIStyle ActiveToolbarButton { get; private set; }
+        public static GUIStyle ListBackgroundOdd { get; private set; }
+        public static GUIStyle ListBackgroundEven { get; private set; }
+        public static GUIStyle Box { get; private set; }
 
-        ListBackgroundOdd = new GUIStyle("OL EntryBackOdd");
-        ListBackgroundOdd.margin = new RectOffset(0, 0, 0, 0);
-        ListBackgroundOdd.padding = new RectOffset(5, 5, 5, 5);
-        ListBackgroundOdd.richText = true;
+        static GameEventStyles()
+        {
+            ActiveToolbarButton = new GUIStyle("toolbarbutton");
+            ActiveToolbarButton.normal = ActiveToolbarButton.onNormal;
 
-        ListBackgroundEven = new GUIStyle("OL EntryBackEven");
-        ListBackgroundEven.margin = new RectOffset(0, 0, 0, 0);
-        ListBackgroundEven.padding = new RectOffset(5, 5, 5, 5);
-        ListBackgroundEven.richText = true;
+            ListBackgroundOdd = new GUIStyle("OL EntryBackOdd");
+            ListBackgroundOdd.margin = new RectOffset(0, 0, 0, 0);
+            ListBackgroundOdd.padding = new RectOffset(5, 5, 5, 5);
+            ListBackgroundOdd.richText = true;
 
-        Box = new GUIStyle("CN Box");
-        Box.padding = new RectOffset(1, 1, 1, 1);
+            ListBackgroundEven = new GUIStyle("OL EntryBackEven");
+            ListBackgroundEven.margin = new RectOffset(0, 0, 0, 0);
+            ListBackgroundEven.padding = new RectOffset(5, 5, 5, 5);
+            ListBackgroundEven.richText = true;
+
+            Box = new GUIStyle("CN Box");
+            Box.padding = new RectOffset(1, 1, 1, 1);
+        }
     }
 }

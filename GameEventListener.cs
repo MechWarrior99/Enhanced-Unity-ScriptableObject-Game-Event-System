@@ -1,46 +1,49 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
-public class GameEventListener : MonoBehaviour
+namespace Bewildered.Events
 {
-    [SerializeField]
-    private GameEvent _event;
-    [SerializeField]
-    private UnityEvent _response;
-
-    /// <summary>
-    /// The event to listen for to be raised.
-    /// </summary>
-    public GameEvent Event
+    public class GameEventListener : MonoBehaviour
     {
-        get { return _event; }
-        set { _event = value; }
-    }
+        [SerializeField]
+        private GameEvent _event;
+        [SerializeField]
+        private EnhancedEvent _response;
 
-    /// <summary>
-    /// The action to take when the GameEvent is raised.
-    /// </summary>
-    public UnityEvent Response
-    {
-        get { return _response; }
-        set { _response = value; }
-    }
+        /// <summary>
+        /// The event to listen for to be raised.
+        /// </summary>
+        public GameEvent Event
+        {
+            get { return _event; }
+            set { _event = value; }
+        }
 
-    /// <summary>
-    /// Called from the registered GameEvent when the event is raised.
-    /// </summary>
-    internal void OnEventRaised()
-    {
-        _response.Invoke();
-    }
+        /// <summary>
+        /// The action(s) to take when the GameEvent is raised.
+        /// </summary>
+        public EnhancedEvent Response
+        {
+            get { return _response; }
+            set { _response = value; }
+        }
 
-    private void OnEnable()
-    {
-        _event.RegisterListener(this);
-    }
 
-    private void OnDisable()
-    {
-        _event.UnregisterListener(this);
+        /// <summary>
+        /// Called from the registered GameEvent when the event is raised.
+        /// </summary>
+        internal void OnEventRaised()
+        {
+            _response.Invoke();
+        }
+
+        private void OnEnable()
+        {
+            _event.RegisterListener(this);
+        }
+
+        private void OnDisable()
+        {
+            _event.UnregisterListener(this);
+        }
     }
 }
