@@ -12,5 +12,5 @@ This system has been designed to allow for easy debugging. To this end, in each 
 To allow for flexability, the system can be fully used from code, and doesn't require use of the editor. This is thanks to teh use of Delegates, aposed to UnityEvents. This allows it to be used for procedural content.
 
 ## Requirements
-* (Odin Serializer)[https://github.com/TeamSirenix/odin-serializer]
+* [Odin Serializer](https://github.com/TeamSirenix/odin-serializer)
 
