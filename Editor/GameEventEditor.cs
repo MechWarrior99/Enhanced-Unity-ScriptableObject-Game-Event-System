@@ -104,7 +104,7 @@ namespace Bewildered.Editors.Events
             int lineNumber = _stackTraces[index].GetFrame(1).GetFileLineNumber();
             int columnNumber = _stackTraces[index].GetFrame(1).GetFileColumnNumber();
 
-            string name = "<color=teal>" + method.DeclaringType.Name + ":" + "</color>" + "<color=olive>" + method.Name + "():" + lineNumber + "</color>";
+            string name = "<color=teal>" + method.DeclaringType.Name + "." + "</color>" + "<color=olive>" + method.Name + "():" + lineNumber + "</color>";
 
             if (_searchFilter != "")
             {
